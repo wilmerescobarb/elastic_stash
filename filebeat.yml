@@ -2,7 +2,16 @@ filebeat.inputs:
 - type: log
   enabled: true
   paths:
-    - /usr/share/filebeat/logs/*.log
+    - /usr/share/filebeat/mylogs/*.log
+
+  ###Logs excluidos
+  exclude_lines: ['^DEBUG']
+
+  ###Multilinea
+  multiline.pattern: ^(DEBUG|INFO|ERROR|TRACE|FATAL).*
+  multiline.negate: true
+  multiline.match: after #cada linea la une al evento previo hasta que encuentre una traza diferente 
+
 
 output.logstash:
   hosts: ["logstash:5044"]
