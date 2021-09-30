@@ -75,3 +75,8 @@ filter {
   }
 }
 ```
+5. Generate logs
+```
+cd logs/
+java -jar log-generator-1.0.jar -l 50 -d 0
+```
