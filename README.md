@@ -18,7 +18,7 @@ sudo apt-get install docker-compose
 
 2. Git clone this repository
 ```
-git clone https://github.com/gnokoheat/elk-with-filebeat-by-docker-compose
+git clone https://github.com/wilmerescobarb/elastic_stash.git
 cd elk-with-filebeat-by-docker-compose/
 ```
 
