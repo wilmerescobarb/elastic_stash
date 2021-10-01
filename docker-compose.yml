@@ -56,7 +56,6 @@ services:
         hard: -1
     volumes:
       - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
-      - ./logstash.template.json:/usr/share/logstash/templates/logstash.template.json
     ports:
       - 5044:5044
     links:
@@ -81,8 +80,6 @@ services:
     depends_on:
       - logstash
     volumes:
-      #- /var/run/docker.sock:/host_docker/docker.sock
-      #- /var/lib/docker:/host_docker/var/lib/docker
       - ./mylogs:/usr/share/filebeat/mylogs
       - ./filebeat.yml:/usr/share/filebeat/filebeat.yml
     command: ["--strict.perms=false"]
